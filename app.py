@@ -26,14 +26,6 @@ session = Session(engine)
 # Create Flask app, all routes go after this code
 app = Flask(__name__)
 
-# Example of app name variable
-# import app
-# print("example __name__ = %s", __name__)
-# if __name__ == "__main__":
-#     print("example is being run directly.")
-# else:
-#     print("example is being imported")
-
 # Define welcome route
 @app.route("/")
 
@@ -47,3 +39,15 @@ def welcome():
     /api/v1.0/tobs
     /api/v1.0/temp/start/end
     ''') 
+
+# Precipitation Route
+@app.route("/api/v1.0/precipitation")
+
+def precipitation():
+   prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+   precipitation = session.query(Measurement.date, Measurement.prcp).\
+    filter(Measurement.date >= prev_year).all()
+   precip = {date: prcp for date, prcp in precipitation}
+   return jsonify(precip)
+# check website changes, (http://127.0.0.1:5000/), should be block of dates
+
