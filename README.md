@@ -6,7 +6,7 @@ In this Project, We performed an analysis of weather conditions in Oahu, Hawaii,
 
 To accomplish our purpose, the challenge was specifically to study the temperature trends in June and December, using an SQLite data file and other resources, such as SQLAlchemy, Pandas, Numpy, Matplotlib, Jupyther Notebook as well as Python, and Anaconda.
 
-Our final task was to present summary statistics of temperature data for the chosen months. That information helps us to define if the Surf and Ice Cream Shop Business can be successful and sustainable all the year. We also perform an additional analysis about precipitation. 
+Our final task was to present summary statistics of temperature data for the chosen months. That information helped us to define if the Surf and Ice Cream Shop Business can be successful and sustainable all the year. We also perform an additional analysis about precipitation. 
 
 ## Resources
 
@@ -15,7 +15,7 @@ Our final task was to present summary statistics of temperature data for the cho
 
 ## Results
 
-To achieve our goal, our task was to retrieve data from the hawaii.sqlite file to perform our analysis with SQLAlchemy, Python, NumPy, Matplotplib, and some Panda functions and methods. Once the temperatures of June and December were obtained by using queries, we converted the data into lists and DataFrames. The final step was to print statistics summaries.
+Our task was to retrieve and analyze data from the _hawaii.sqlite_ file using SQLAlchemy, Python, NumPy, Matplotplib, and some Pandas functions and methods. Once the temperatures of June and December were obtained with queries, we converted the data into lists and DataFrames. The final step was to print statistics summaries.
 
 The following DataFrame shows the temperature statistics for June.
 
@@ -37,7 +37,7 @@ In December, the average temperature is 71.0415 ℉. Also, the minimum and maxim
 
 The next results indicate some key differences in weather patterns between June and December.
 
-- The average temperature in June is 74.9441 ℉ and in December is 71.0415. This means that the temperature is 3.9026 degrees lower in December.
+- The average temperature in June is 74.9441 ℉ and in December is 71.0415. This means that the temperature is 3.9 degrees lower in December.
 
 - Temperatures in December have more variations than in June due to the winter season. In other words, while the minimum and maximum temperatures in December are 56 ℉ and 83 ℉, respectively; in June the minimum is 64 ℉ and the maximum is 85 ℉.
 Even though the lowest temperatures between June and December have 8-degrees differences, the highest temperature have only 2-degrees apart.
