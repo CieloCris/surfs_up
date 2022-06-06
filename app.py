@@ -32,12 +32,12 @@ app = Flask(__name__)
 def welcome():
     return(
     '''
-    Welcome to the Climate Analysis API!
-    Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
-    /api/v1.0/temp/start/end
+    Welcome to the Climate Analysis API!<br/>
+    Available Routes:<br/>
+    /api/v1.0/precipitation<br/>
+    /api/v1.0/stations<br/>
+    /api/v1.0/tobs<br/>
+    /api/v1.0/temp/start/end<br/>
     ''') 
 
 # Precipitation Route
@@ -49,16 +49,14 @@ def precipitation():
     filter(Measurement.date >= prev_year).all()
    precip = {date: prcp for date, prcp in precipitation}
    return jsonify(precip)
-# check website changes, (http://127.0.0.1:5000/), should be block of dates
 
-# 9.5.4 Stations Route
+# Stations Route
 @app.route("/api/v1.0/stations")
 
 def stations():
     results = session.query(Station.station).all()
     stations = list(np.ravel(results))
     return jsonify(stations=stations)
-# check website changes, (http://localhost:5000/), stations with USC0051xxxx codes
 
 # Monthly Temperature Route
 @app.route("/api/v1.0/tobs")
@@ -70,8 +68,6 @@ def temp_monthly():
       filter(Measurement.date >= prev_year).all()
     temps = list(np.ravel(results))
     return jsonify(temps=temps)
-
-#do flask run, (http://localhost:5000/), block of temps (F)
 
 # Statistic Route
 @app.route("/api/v1.0/temp/<start>")
@@ -99,8 +95,3 @@ def stats(start=None, end=None):
 # /api/v1.0/temp/2017-06-01/2017-06-30
 # should return 
 # ["temps":[71.0,77.21989528795811,83.0]]
-
-# from tech help
-# if __name__ == '__main__':
-#     app.run()
-
